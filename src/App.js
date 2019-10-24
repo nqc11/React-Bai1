@@ -1,46 +1,37 @@
-import React, {Component} from 'react';
-import logo, {ReactComponent} from './logo.svg';
-import './App.css';
-
-import SinhVien from './component/SinhVien/SinhVien.js';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+import React, { Component } from "react";
+import logo, { ReactComponent } from "./logo.svg";
+import "./App.css";
+import SinhVien from "./components/SinhVien/SinhVien.js";
+import SanPham from "./components/SanPham/SanPham.js";
 
 class App extends Component {
-  render(){
-    return(
-      <div>
-        <h1>Nguyễn Quốc Cường</h1> 
-        <h2>Hello</h2>
-        <SinhVien hoten='Nguyễn Quốc Cường' tuoi = '26'>
-          Sở thích: Bóng Đá, Chơi Game, Chạy Bo,....
-        </SinhVien>
-        <SinhVien hoten='Nguyễn Thị Mỹ Hằng' tuoi = '16'>
-          Sở thích: Cafe
-        </SinhVien>
-        <SinhVien hoten='Lê Nguyễn Ý Linh' tuoi = '11'/>
+  render() {
+    return (
+
+      
+      <div className="div">
+        <h1>Sản Phẩm</h1>
+          <SanPham maSP = "01" tenSP = "Cafe" giaSP = "7000">
+            ƯU ĐÃI: Sale 100%
+          </SanPham>
+          <p>--------------------------------------------------</p>
+          <SanPham maSP = "02" tenSP = "Soda" giaSP = "10000">
+            ƯU ĐÃI: Sale 100%
+          </SanPham>
+          <p>--------------------------------------------------</p>
+          <SanPham maSP = "03" tenSP = "Pepsi" giaSP = "18000">
+            ƯU ĐÃI: Sale 100%
+          </SanPham>
+          <p>--------------------------------------------------</p>
+          <SanPham maSP = "04" tenSP = "RedBull" giaSP = "15000">
+            ƯU ĐÃI: Sale 100%
+          </SanPham>
+          <p>--------------------------------------------------</p>
+          <SanPham maSP = "04" tenSP = "Dorito" giaSP = "50000">
+            ƯU ĐÃI: Sale 100%
+          </SanPham>
       </div>
-    )
+    );
   }
 }
-
 export default App;
