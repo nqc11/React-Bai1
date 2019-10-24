@@ -5,31 +5,49 @@ import SinhVien from "./components/SinhVien/SinhVien.js";
 import SanPham from "./components/SanPham/SanPham.js";
 
 class App extends Component {
+  state = {
+    sinhVien : [
+      { hoten:'Nguyễn Thị Mỹ Hằng', tuoi: 19, sothich: 'cafe' },
+      { hoten: 'Nguyễn Quốc Cường', tuoi: 19, sothich: 'bida' },
+      { hoten: 'Hoàng Kim Anh', tuoi: 19, sothich: 'milktea' },
+    ],
+    lop : 'Lập trình ReactJS'
+  }
+
+  xuLyCapNhat = () => {
+    this.setState(
+      {
+        lop: '18CDTH11',
+        sinhVien : [
+          { hoten:'Lý Thị Kim Ngân', tuoi: 19, sothich: 'cafe' },
+          { hoten: 'Nguyễn Quốc Anh', tuoi: 19, sothich: 'bida' },
+          { hoten: 'Nguyễn Thị Thu Trang', tuoi: 19, sothich: 'milktea' },
+        ]
+      }
+    );
+  }
   render() {
     return (
-
-      
-      <div className="div">
-        <h1>Sản Phẩm</h1>
-          <SanPham maSP = "01" tenSP = "Cafe" giaSP = "7000">
-            ƯU ĐÃI: Sale 100%
-          </SanPham>
-          <p>--------------------------------------------------</p>
-          <SanPham maSP = "02" tenSP = "Soda" giaSP = "10000">
-            ƯU ĐÃI: Sale 100%
-          </SanPham>
-          <p>--------------------------------------------------</p>
-          <SanPham maSP = "03" tenSP = "Pepsi" giaSP = "18000">
-            ƯU ĐÃI: Sale 100%
-          </SanPham>
-          <p>--------------------------------------------------</p>
-          <SanPham maSP = "04" tenSP = "RedBull" giaSP = "15000">
-            ƯU ĐÃI: Sale 100%
-          </SanPham>
-          <p>--------------------------------------------------</p>
-          <SanPham maSP = "04" tenSP = "Dorito" giaSP = "50000">
-            ƯU ĐÃI: Sale 100%
-          </SanPham>
+      <div className="App">
+        <h1>Ứng dụng React đầu tiên</h1>
+        <p>Đến từ Nguyễn Thị Mỹ Hằng - Lớp {this.state.lop} </p>
+        <button onClick = {this.xuLyCapNhat} >
+          Cập nhật
+        </button>
+        <SinhVien
+          hoten={this.state.sinhVien[0].hoten}
+          tuoi={this.state.sinhVien[0].tuoi} >
+          sothich: {this.state.sinhVien[0].sothich}
+        </SinhVien>
+        <SinhVien 
+        hoten={this.state.sinhVien[1].hoten}
+        tuoi={this.state.sinhVien[1].tuoi} >
+          sothich: {this.state.sinhVien[1].sothich}
+        </SinhVien>
+        <SinhVien
+         hoten={this.state.sinhVien[2].hoten}
+         tuoi={this.state.sinhVien[2].tuoi} />
+         sothich: {this.state.sinhVien[1].sothich}
       </div>
     );
   }
